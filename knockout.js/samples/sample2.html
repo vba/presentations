@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sample 1</title>
+</head>
+<body>
+
+	<h2>JQuery zone</h2>
+	<p>First Name: <strong id="jqFirstName"></strong></p>
+	<p>Last Name: <strong id="jqLastName"></strong></p>
+	<p>Full Name: <strong id="jqFullName"></strong></p>
+
+	<h2>KO zone</h2>
+	<p>First Name: <strong data-bind="text: firstName"></strong></p>
+	<p>Last Name: <strong data-bind="text: lastName"></strong></p>
+	<p>Full Name: <strong data-bind="text: fullName"></strong></p>
+
+	<script type="text/javascript" src="knockout.js"></script>
+	<script type="text/javascript" src="jquery-1.10.2.min.js"></script>
+	
+	<script type="text/javascript">
+		(function() {
+			var viewModel = function() {
+				this.firstName = ko.observable("Eric");
+				this.lastName = ko.observable("Cartman");
+				
+				this.fullName = ko.computed(function() {
+					return [this.firstName(), this.lastName()].join(' ');
+				}, this);
+			};
+			
+			ko.applyBindings(new viewModel());
+		})();
+	</script>
+	
+	<script type="text/javascript">
+		(function($) {
+			var 
+				$jqFirstName = $('#jqFirstName'),
+				$jqLastName = $('#jqLastName');
+			
+			$jqFirstName.text('Alphonse');
+			$jqLastName.text('Mephesto');
+			
+			$('#jqFullName').text([$jqFirstName.text(), $jqLastName.text()].join(' '));
+		})(jQuery);
+	</script>
+</body>
+</html>

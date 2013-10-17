@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sample 1</title>
+</head>
+<body>
+
+	<h2>JQuery zone</h2>
+	<p>First Name: <input id="jqFirstName"/></p>
+	<p>Last Name: <input id="jqLastName"/></p>
+	<p>Full Name: <strong id="jqFullName"></strong></p>
+
+	<h2>KO zone</h2>
+	<p>First Name: <input type="text" data-bind="value: firstName, valueUpdate: 'afterkeydown'"/></p>
+	<p>Last Name: <input type="text" data-bind="value: lastName, valueUpdate: 'afterkeydown'"/></p>
+	<p>Full Name: <strong data-bind="text: fullName"></strong></p>
+
+	<script type="text/javascript" src="knockout.js"></script>
+	<script type="text/javascript" src="jquery-1.10.2.min.js"></script>
+	
+	<script type="text/javascript">
+		(function() {
+			var viewModel = function() {
+				this.firstName = ko.observable("Eric");
+				this.lastName = ko.observable("Cartman");
+				
+				this.fullName = ko.computed(function() {
+					return [this.firstName(), this.lastName()].join(' ');
+				}, this);
+			};
+			
+			ko.applyBindings(new viewModel());
+		})();
+	</script>
+	
+	<script type="text/javascript">
+		(function($) {
+			var 
+				$jqFirstName = $('#jqFirstName'),
+				$jqLastName = $('#jqLastName');
+			
+			$jqFirstName.val('Alphonse');
+			$jqLastName.val('Mephesto');
+			
+			var generateFullName = function() {	
+				$('#jqFullName').text([$jqFirstName.val(), $jqLastName.val()].join(' '));
+			};
+			
+			$('#jqFirstName, #jqLastName').bind('keydown',generateFullName);
+		})(jQuery);
+	</script>
+</body>
+</html>
