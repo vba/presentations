@@ -4,7 +4,8 @@
 	<title>Sample 4</title>
 </head>
 <body>
-	<h2>Persons</h2>
+	<h2>Persons (<span data-bind="text: persons().length"></span>)</h2>
+	<button data-bind="click: addPerson">Add an another person</button>
 	<table>
 		<thead>
 		<tr>
@@ -14,10 +15,18 @@
 		</tr>
 		</thead>
 		<tbody data-bind="foreach: persons">
-			<tr data-bind_="visible: age() < 10">
-				<td data-bind="text: name"></td>
-				<td data-bind="text: age"></td>
-				<td data-bind="text: formatAddress"></td>
+			<tr>
+				<td>
+					<input type="text" data-bind="value: name"/>
+				</td>
+				<td>
+					<input type="text" data-bind="value: age"/>
+				</td>
+				<td>
+					<select data-bind="options: $root.addresses, value: address, optionsText: 'street'"></select>
+					<input type="text" data-bind="value: address().number" />
+					<a data-bind="click: $root.removePerson" href="javascript:;">Remove</a>
+				</td>
 			</tr>
 		</tbody>
 	</table>
@@ -43,11 +52,13 @@
 				{street: "Main road", number: 1},
 				{street: "Strange castle", number: -1},
 				{street: "Chef's lounge", number: 2},
+				{street: "Canada country", number: 34},
 			];
 			
 			var viewModel = function() {
 			
 				var _public = {
+					addresses: serverData,
 					persons: ko.observableArray([
 						new Person("Eric Cartman", 8, serverData[0]),
 						new Person("Stan Marsh", 8, serverData[0]),
@@ -55,7 +66,13 @@
 						new Person("Chef", 45, serverData[2]),
 						new Person("Kevin", 50, serverData[1]),
 						new Person("Alphonse Mephesto", 120, serverData[1]),
-					])
+					]),
+					addPerson: function () {
+						_public.persons.push(new Person("T & P", 35, serverData[3]));
+					},
+					removePerson: function (person) {
+						_public.persons.remove(person);
+					}
 				};
 				return _public;
 			}();
