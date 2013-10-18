@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sample 4</title>
+</head>
+<body>
+	<h2>Persons</h2>
+	<table>
+		<tbody data-bind="foreach: persons">
+			<tr>
+				<td data-bind="text: name"></td>
+				<td data-bind="text: age"></td>
+				<td data-bind="text: formatAddress"></td>
+			</tr>
+		</tbody>
+	</table>
+	
+	<script type="text/javascript" src="jquery-1.10.2.min.js"></script>
+	<script type="text/javascript" src="knockout.js"></script>
+	
+	<script type="text/javascript">
+		(function() {
+			
+			function Person(name, age, address) {
+				var self = this;
+				self.name = name;
+				self.age = ko.observable(age);
+				self.address = ko.observable(address);
+				
+				self.formatAddress = ko.computed(function(){
+					return [self.address().street, self.address().number].join(' st. ');
+				});
+			}
+			
+			var serverData = [
+				{street: "Main road", number: 1},
+				{street: "Strange castle", number: -1},
+				{street: "Chef's lounge", number: 2},
+			];
+			
+			var viewModel = function() {
+			
+				var _public = {
+					persons: ko.observableArray([
+						new Person("Eric Cartman", 8, serverData[0]),
+						new Person("Stan Marsh", 8, serverData[0]),
+						new Person("Kayle Broflovsky", 8, serverData[0]),
+						new Person("Chef", 45, serverData[2]),
+						new Person("Kevin", 50, serverData[1]),
+						new Person("Alphonse Mephesto", 120, serverData[1]),
+					]),
+				};
+				return _public;
+			}();
+			
+			ko.applyBindings(viewModel);
+		})();
+	</script>
+</body>
+</html>
