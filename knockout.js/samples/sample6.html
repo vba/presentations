@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sample 6 - Extensibility</title>
+</head>
+<body>
+	<h2 data-bind="fadeIt: field() > 10, valueUpdate: 'afterkeydown'">Extensibility is really cool</h2>
+	<input data-bind="value: field" type="text"/>
+	
+	<script type="text/javascript" src="jquery-1.10.2.min.js"></script>
+	<script type="text/javascript" src="knockout.js"></script>
+	
+	<script type="text/javascript">
+		(function() {
+
+			ko.bindingHandlers.fadeIt = {
+				init: function (element, valueAccessor) {
+					var shouldDisplay = valueAccessor();
+					$(element).toggle(shouldDisplay);
+				},
+				update: function (element, valueAccessor) {
+					var shouldDisplay = valueAccessor();
+					shouldDisplay ? $(element).fadeIn(1000) : $(element).fadeOut(1000);
+				}
+			};
+			
+			var viewModel = function() {
+				
+				var _public = {
+					field: ko.observable(1)
+				};
+				return _public;
+			}();
+			
+			ko.applyBindings(viewModel);
+		})();
+	</script>
+</body>
+</html>
