@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sample 1</title>
+</head>
+<body>
+
+	<h1 style="display: none"></h1>
+	<script type="text/javascript" src="../dependencies/require.js"></script>
+	
+	<script type="text/javascript">
+		(function() {
+			require.config({baseUrl: "../dependencies"});
+			require(['utils/namespace', 'jquery'], function(ns, $) {
+				var sample1 = ns.register('reseau.require.js.sample1');
+				sample1.someObject = {};
+				
+				if (sample1 == null) return;
+				
+				$("h1")
+					.text("Namespace reseau.require.js.sample1 is there")
+					.fadeIn().fadeOut()
+					.fadeIn().fadeOut()
+					.fadeIn().fadeOut()
+					.fadeIn();
+			});
+		})();
+	</script>
+</body>
+</html>
