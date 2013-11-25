@@ -14,7 +14,7 @@
 		</tr>
 		</thead>
 		<tbody data-bind="foreach: persons">
-			<tr data-bind_="visible: age() < 10">
+			<tr data-bind="visible: someMethod()">
 				<td data-bind="text: name"></td>
 				<td data-bind="text: age"></td>
 				<td data-bind="text: formatAddress"></td>
@@ -33,6 +33,10 @@
 				self.name = name;
 				self.age = ko.observable(age);
 				self.address = ko.observable(address);
+				
+				self.someMethod = ko.computed(function() {
+					return self.age() < 10;
+				});
 				
 				self.formatAddress = ko.computed(function(){
 					return [self.address().street, self.address().number].join(' st. ');

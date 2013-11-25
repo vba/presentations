@@ -5,7 +5,7 @@
 </head>
 <body>
 	<h2>Persons (<span data-bind="text: persons().length"></span>)</h2>
-	<button data-bind="click: addPerson">Add an another person</button>
+	<button data-bind="click: addPerson, enable: persons().length < 8">Add an another person</button>
 	<table>
 		<thead>
 		<tr>

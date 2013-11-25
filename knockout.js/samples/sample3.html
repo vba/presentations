@@ -46,7 +46,7 @@
 				$('#jqFullName').text([$jqFirstName.val(), $jqLastName.val()].join(' '));
 			};
 			
-			$('#jqFirstName, #jqLastName').bind('keydown',generateFullName);
+			$('#jqFirstName, #jqLastName').bind('keyup',generateFullName);
 		})(jQuery);
 	</script>
 </body>
