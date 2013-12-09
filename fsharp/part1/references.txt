@@ -1,0 +1,3 @@
+1. http://fsharpforfunandprofit.com/posts/ten-reasons-not-to-use-a-functional-programming-language/
+2. https://en.wikipedia.org/wiki/Moore%27s_law
+3. http://fsharpforfunandprofit.com
