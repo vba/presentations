@@ -1,3 +1,4 @@
 1. http://fsharpforfunandprofit.com/posts/ten-reasons-not-to-use-a-functional-programming-language/
 2. https://en.wikipedia.org/wiki/Moore%27s_law
 3. http://fsharpforfunandprofit.com
+4. Tomas Petricek, Jon Skeet - Functional Programming for the Real World (2009).pdf
