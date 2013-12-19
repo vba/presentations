@@ -12,6 +12,5 @@ open System
 [<EntryPoint>]
 let main args = 
     printf "Calculation result, must be here"
-    Console.ReadLine() |> ignore
+    //Console.ReadLine() |> ignore
     0
-
