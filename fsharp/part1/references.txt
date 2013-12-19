@@ -2,3 +2,4 @@
 2. https://en.wikipedia.org/wiki/Moore%27s_law
 3. http://fsharpforfunandprofit.com
 4. Tomas Petricek, Jon Skeet - Functional Programming for the Real World (2009).pdf
+5. http://www.simontylercousins.net/journal/2013/2/22/does-the-language-you-choose-make-a-difference.html

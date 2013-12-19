@@ -7,10 +7,11 @@ module ConsoleApp.Main
 
 open System
 
-let someFunction x y = x + y
+
 
 [<EntryPoint>]
 let main args = 
-    Console.WriteLine("Hello world!")
+    printf "Calculation result, must be here"
+    Console.ReadLine() |> ignore
     0
 
