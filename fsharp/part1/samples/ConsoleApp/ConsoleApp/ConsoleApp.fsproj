@@ -15,6 +15,7 @@
       <BuildOrder>
         <String>AssemblyInfo.fs</String>
         <String>Math/Misc.fs</String>
+        <String>Samples/Sample1.fs</String>
         <String>MathExt.fs</String>
         <String>Program.fs</String>
       </BuildOrder>
@@ -48,6 +49,7 @@
   <ItemGroup>
     <Compile Include="AssemblyInfo.fs" />
     <Compile Include="Math\Misc.fs" />
+    <Compile Include="Samples\Sample1.fs" />
     <Compile Include="MathExt.fs" />
     <Compile Include="Program.fs" />
     <None Include="App.config">
@@ -56,6 +58,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Math\" />
+    <Folder Include="Samples\" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
