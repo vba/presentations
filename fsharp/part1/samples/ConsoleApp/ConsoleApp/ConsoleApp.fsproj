@@ -51,8 +51,11 @@
     <Compile Include="AssemblyInfo.fs" />
     <Compile Include="Math\Misc.fs" />
     <Compile Include="Samples\Sample1.fs" />
-    <Compile Include="Samples\Sample3.fs" />
     <Compile Include="Samples\Sample2.fs" />
+    <Compile Include="Samples\Sample3.fs" />
+    <Compile Include="Samples\Sample4.fs" />
+    <Compile Include="Samples\Sample5.fs" />
+    <Compile Include="Samples\Sample6.fs" />
     <Compile Include="MathExt.fs" />
     <Compile Include="Program.fs" />
     <None Include="App.config">
