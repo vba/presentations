@@ -54,12 +54,14 @@ module ConsoleApp.Samples.Sample4
         let sizeOfFolder () = 
             let getFiles folder = Directory.GetFiles (folder, "*.*", SearchOption.AllDirectories)
 
+            let temp = (fun s -> getFiles s) >> Array.map (fun file -> new FileInfo(file))
+
             getFiles 
                 >> Array.map (fun file -> new FileInfo(file))
                 >> Array.map (fun info -> info.Length)
                 >> Array.sum
 
-
+            
     module BackwardOperators = 
         
         let (<|) f x = f x
