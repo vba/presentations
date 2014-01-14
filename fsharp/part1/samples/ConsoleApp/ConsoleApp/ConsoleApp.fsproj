@@ -56,6 +56,7 @@
     <Compile Include="Samples\Sample4.fs" />
     <Compile Include="Samples\Sample5.fs" />
     <Compile Include="Samples\Sample6.fs" />
+    <Compile Include="Samples\Sample7.fs" />
     <Compile Include="MathExt.fs" />
     <Compile Include="Program.fs" />
     <None Include="App.config">
