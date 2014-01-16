@@ -33,3 +33,26 @@ module ConsoleApp.Samples.Sample8
         type String with
             member s.IsMatch (pattern) = 
                 Text.RegularExpressions.Regex.IsMatch(s, pattern)
+
+    module ``Async programming`` =
+        
+        open System
+        open System.Net
+        open Microsoft.FSharp.Control.WebExtensions
+
+        let contentType url =
+
+            async {let req =  WebRequest.Create(Uri url)
+                   use! resp = req.AsyncGetResponse()
+                   return (url, resp.ContentType)}
+ 
+        let sites = ["http://www.bing.com";
+                        "http://www.google.com";
+                        "http://www.yahoo.com";
+                        "http://www.search.com"]
+
+        let contentTypes =
+            Async.Parallel [for site in sites -> contentType site ]
+                |> Async.RunSynchronously
+
+        contentTypes |> printfn "%A"
