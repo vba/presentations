@@ -8,7 +8,6 @@
 module ConsoleApp.Samples.Sample8
 
     module ``Units of measure`` =
-        //open System
         
         [<Measure>] 
         type F = 
@@ -26,4 +25,11 @@ module ConsoleApp.Samples.Sample8
         [<Measure>] // Cooling ratio 
         type CR = C / Sec
 
+        let thisPlaceCR = 0.2<CR>
 
+    module ``Extension methods`` =
+        open System
+
+        type String with
+            member s.IsMatch (pattern) = 
+                Text.RegularExpressions.Regex.IsMatch(s, pattern)
