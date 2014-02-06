@@ -12,6 +12,7 @@ module ConsoleApp.Samples.Sample4
     module AwfulApproach =
         let sizeOfFolder folder =
             
+            // E3( E2 ( E1() ) )
             // 1. Not type inference
             // 2. file* are passed as param to following function
             // 3. Really awful code, you need a time to understand it
@@ -51,7 +52,7 @@ module ConsoleApp.Samples.Sample4
         
         let (>>) f g x = g(f x)
 
-        let sizeOfFolder () = 
+        let sizeOfFolder  = 
             let getFiles folder = Directory.GetFiles (folder, "*.*", SearchOption.AllDirectories)
 
             let temp = (fun s -> getFiles s) >> Array.map (fun file -> new FileInfo(file))

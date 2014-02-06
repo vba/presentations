@@ -58,6 +58,8 @@ open System
             member me.Walk() = printfn "[Eagle walk sound]"
             member me.Run() = printfn "[Eagle run sound]"
 
+        member me.Walk() = printfn "[BladEagle walk sound]"
+
     module TestAll =
 
         let eagle1: IAnimal = BladEagle() :> IAnimal
@@ -66,6 +68,7 @@ open System
 
         eagle1.Run()
         (eagle2 :> IAnimal).Walk()
+        eagle2.Walk()
         
         printfn "%A" (eagle1 :?> BladEagle).Habitat
 
@@ -84,3 +87,5 @@ open System
         let inline fly (x : ^T) = (^T : (member Fly : unit->unit) (x))
         fly(honeyBee1)
         fly(eagle2)
+
+

@@ -38,4 +38,4 @@ module ConsoleApp.Samples.Sample5
         | [_]   -> 1
         | [_; _]   -> 2
         | [_; _; _]   -> 3
-        | head :: tail -> 1 + listLength tail 
+        | head :: tail -> 1 + listLength2 tail 

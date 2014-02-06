@@ -35,7 +35,7 @@ module ConsoleApp.Samples.Sample2
             sw.WriteLine(text)
             printfn "%A" (sb.ToString())
 
-        let partialAppendFile1 text = appendFile (path) text
+        let partialAppendFile1 text = appendFile path text
         let partialAppendFile2 = appendFile (path)
 
     module RecFunctions =
@@ -43,8 +43,8 @@ module ConsoleApp.Samples.Sample2
         let rec fact x = if x <= 1 then 1 else x * fact (x - 1)
 
         // mutual recursion
-        // let isOdd n = if n = 0 then false elif n = 1 then true else (isEven (n - 1))
-        // let isEven n = if n = 0 then true elif n = 1 then false else (isOdd (n - 1))
+        //let rec isOdd n = if n = 0 then false elif n = 1 then true else (isEven (n - 1))
+        //and isEven n = if n = 0 then true elif n = 1 then false else (isOdd (n - 1))
 
         // symbolic operators (!%&*+-./<=>?@^|~)
         let (!) = fact

@@ -56,3 +56,10 @@ module ConsoleApp.Samples.Sample8
                 |> Async.RunSynchronously
 
         contentTypes |> printfn "%A"
+
+// Talking about headers files
+// Methods overridings
+// Generics
+// Events and delegates
+// Monads and computation expressions
+// Async programming
