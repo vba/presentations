@@ -17,6 +17,13 @@ module ConsoleApp.Samples.Sample8
 
         let nowC = 20.0<C>
         let nowF = C.ToFar(nowC)
+
+        let nowC2 = 20.0<C>
+
+        type Temp = 
+            | Cel of float<C> 
+            | Far of float<F>
+
         //let rubbish1 = nowC + nowF
 
         [<Measure>] 
@@ -58,8 +65,11 @@ module ConsoleApp.Samples.Sample8
         contentTypes |> printfn "%A"
 
 // Talking about headers files
-// Methods overridings
+// Methods overriding
+// Modules vs namespaces
 // Generics
 // Events and delegates
 // Monads and computation expressions
+// Scripting
 // Async programming
+// IDEs support

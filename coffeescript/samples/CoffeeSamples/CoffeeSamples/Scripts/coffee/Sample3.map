@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "Sample3.js",
+  "sourceRoot": "..\\..\\..",
+  "sources": [
+    "CoffeeSamples\\Scripts\\coffee\\Sample3.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAMA;AAAA;;;;;;;;;;;;;;;;GAAA;;AAmBA;AAAA;;;GAnBA;AAAA;AAAA;AAAA,MAAA,WAAA;;AAAA,EA6BA,GAAA,GAAM,CA7BN,CAAA;;AAAA,EA8BA,MAAA;;AAAS;WAAM,GAAA,IAAO,CAAb,GAAA;AACR,oBAAA,EAAA,GAAE,GAAF,GAAO,yEAAP,CADQ;IAAA,CAAA;;MA9BT,CAAA;;AAAA,EAiCA,OAAO,CAAC,GAAR,CAAY,MAAZ,CAjCA,CAAA;;AAqCA;AAAA;;;;;KArCA;AAAA"
+}
