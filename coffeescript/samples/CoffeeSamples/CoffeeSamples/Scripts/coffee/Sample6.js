@@ -19,7 +19,7 @@
     __extends(Eagle, _super);
 
     function Eagle(name) {
-      this.name = name;
+      this.name = name != null ? name : "Bill";
     }
 
     Eagle.prototype.walk = function() {

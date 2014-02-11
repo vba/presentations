@@ -9,7 +9,7 @@ class Animal
 	walk: -> throw "Not yet implemented"
 
 class Eagle extends Animal
-	constructor: (@name) ->
+	constructor: (@name="Bill") ->
 	walk: -> console.log "[Eagle] I'm an eagle, my name is #{@name} and I can walk, walk ..."
 	canFly: -> yes
 

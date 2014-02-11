@@ -8,6 +8,9 @@ class Eagle implements IAnimal {
 	name: string;
 
 	constructor(name: string) {
+		if (name == null) {
+			name = "Bill"
+		}
 	    this.name = name;
 	}
 	walk(): void {

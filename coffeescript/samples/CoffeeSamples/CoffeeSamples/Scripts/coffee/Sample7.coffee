@@ -5,14 +5,12 @@
 #####################################################
 
 class Checker
-	constructor: (@alert, @message) ->
-		@alert = @alert ? yes
-		@message = @message ? "I found it"
+	constructor: (@alert=yes, @message ="I found it") ->
 	
 	check: (@id) -> 
 		debugger
 		func = 
-			if @alert 
+			if @alert and alert? 
 				alert 
 			else 
 				console.log

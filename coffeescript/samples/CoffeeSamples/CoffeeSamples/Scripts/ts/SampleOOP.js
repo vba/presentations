@@ -1,5 +1,8 @@
 ﻿var Eagle = (function () {
     function Eagle(name) {
+        if (name == null) {
+            name = "Bill";
+        }
         this.name = name;
     }
     Eagle.prototype.walk = function () {
@@ -17,3 +20,4 @@ eagle.walk();
 if (eagle.canFly()) {
     console.log("Mom, I can fly, I guess");
 }
+//# sourceMappingURL=SampleOOP.js.map

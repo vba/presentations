@@ -57,18 +57,50 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Scripts\coffee\Sample1.js">
+      <DependentUpon>Sample1.coffee</DependentUpon>
+    </Content>
+    <Content Include="Scripts\coffee\Sample1.min.js">
+      <DependentUpon>Sample1.coffee</DependentUpon>
+    </Content>
+    <Content Include="Scripts\coffee\Sample2.js">
+      <DependentUpon>Sample2.coffee</DependentUpon>
+    </Content>
+    <Content Include="Scripts\coffee\Sample2.min.js">
+      <DependentUpon>Sample2.coffee</DependentUpon>
+    </Content>
+    <Content Include="Scripts\coffee\Sample3.js">
+      <DependentUpon>Sample3.coffee</DependentUpon>
+    </Content>
+    <Content Include="Scripts\coffee\Sample3.min.js">
+      <DependentUpon>Sample3.coffee</DependentUpon>
+    </Content>
+    <Content Include="Scripts\coffee\Sample4.js">
+      <DependentUpon>Sample4.coffee</DependentUpon>
+    </Content>
+    <Content Include="Scripts\coffee\Sample4.min.js">
+      <DependentUpon>Sample4.coffee</DependentUpon>
+    </Content>
+    <Content Include="Scripts\ts\SampleOOP.ts" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Scripts\coffee\Sample1.coffee" />
+    <Content Include="Scripts\coffee\Sample2.coffee" />
+    <Content Include="Scripts\coffee\Sample3.coffee" />
+    <Content Include="Scripts\coffee\Sample4.coffee" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Pages\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

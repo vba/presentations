@@ -3,18 +3,15 @@ var Checker;
 
 Checker = (function() {
   function Checker(alert, message) {
-    var _ref, _ref1;
-    this.alert = alert;
-    this.message = message;
-    this.alert = (_ref = this.alert) != null ? _ref : true;
-    this.message = (_ref1 = this.message) != null ? _ref1 : "I found it";
+    this.alert = alert != null ? alert : true;
+    this.message = message != null ? message : "I found it";
   }
 
   Checker.prototype.check = function(id) {
     var func;
     this.id = id;
     debugger;
-    func = this.alert ? alert : console.log;
+    func = this.alert && (typeof alert !== "undefined" && alert !== null) ? alert : console.log;
     if (typeof document !== "undefined" && document !== null ? document.getElementById(this.id) : void 0) {
       return func(this.message);
     }
