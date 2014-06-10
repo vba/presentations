@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <webessentials version="1.9">
   <settings>
-    <CoffeeScriptCompileOnBuild>false</CoffeeScriptCompileOnBuild>
+    <CoffeeScriptCompileOnBuild>true</CoffeeScriptCompileOnBuild>
     <CoffeeScriptCompileToFolder>false</CoffeeScriptCompileToFolder>
     <CoffeeScriptEnableIced>false</CoffeeScriptEnableIced>
     <CoffeeScriptGenerateJsFile>true</CoffeeScriptGenerateJsFile>
@@ -100,7 +100,7 @@
     <ScssGenerateCssFile>True</ScssGenerateCssFile>
     <ScssMinify>True</ScssMinify>
     <ScssShowPreviewWindow>True</ScssShowPreviewWindow>
-    <TypeScriptShowPreviewWindow>true</TypeScriptShowPreviewWindow>
+    <TypeScriptShowPreviewWindow>false</TypeScriptShowPreviewWindow>
     <UseBom>False</UseBom>
     <ValidateVendorSpecifics>false</ValidateVendorSpecifics>
   </settings>
