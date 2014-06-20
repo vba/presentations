@@ -112,9 +112,7 @@
   <ItemGroup>
     <Compile Include="AssemblyInfo.fs" />
     <Content Include="Content\Site.css" />
-    <None Include="Content\bootstrap-theme.min.css" />
     <None Include="Content\bootstrap-theme.css" />
-    <None Include="Content\bootstrap.min.css" />
     <None Include="Content\bootstrap.css" />
     <Content Include="Scripts\out\" />
     <Content Include="Scripts\src\default\modernizr-2.6.2.js" />
