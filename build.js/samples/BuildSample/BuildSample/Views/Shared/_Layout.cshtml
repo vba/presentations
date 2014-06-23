@@ -35,6 +35,19 @@
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+    <script type="text/javascript" src="~/Scripts/out/default/require.js"></script>
+    <script type="text/javascript">
+        (function() {
+            "use strict";
+
+            require.config({
+                baseUrl: '@Url.Content("~/Scripts/out")',
+                paths: {
+                    "underscore": "default/underscore"
+                }
+            });
+        }());
+    </script>
     @RenderSection("scripts", required: false)
 </body>
 </html>

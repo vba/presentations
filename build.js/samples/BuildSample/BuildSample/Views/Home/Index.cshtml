@@ -1,10 +1,39 @@
 <div class="jumbotron">
-    <h1>F# + ASP.NET</h1>
-    <p class="lead">Pure F# ASP.NET web apps are a combination of several excellent technologies that allow you to build complex web applications in less time. To make your experience
-            even more appealing, we recommend following the instructions on
-            <a href="http://bloggemdano.blogspot.com/2013/11/adding-new-items-to-pure-f-aspnet.html">this blog post</a> and
-            installing the <a href="http://visualstudiogallery.msdn.microsoft.com/f1dae7fe-1ecc-4f1b-86b5-32a2970d012a?SRC=Home">F# Web Item Templates</a>.
+	<h1>F# + ASP.NET</h1>
+	<p class="lead">Pure F# ASP.NET web apps are a combination of several excellent technologies that allow you to build complex web applications in less time. To make your experience
+			even more appealing, we recommend following the instructions on
+			<a href="http://bloggemdano.blogspot.com/2013/11/adding-new-items-to-pure-f-aspnet.html">this blog post</a> and
+			installing the <a href="http://visualstudiogallery.msdn.microsoft.com/f1dae7fe-1ecc-4f1b-86b5-32a2970d012a?SRC=Home">F# Web Item Templates</a>.
    </p>
-    <p>To learn more about ASP.NET MVC or Web API visit the <a href="http://go.microsoft.com/fwlink/?LinkId=301870">ASP.NET site</a>.</p>
-    <p>To learn more about web programming in F# visit <a href="http://fsharp.org/webstacks/">fsharp.org</a></p>
+	<p>To learn more about ASP.NET MVC or Web API visit the <a href="http://go.microsoft.com/fwlink/?LinkId=301870">ASP.NET site</a>.</p>
+	<p>To learn more about web programming in F# visit <a href="http://fsharp.org/webstacks/">fsharp.org</a></p>
+	
+	<form action="#">
+		<div>
+			<input id="celsius" type="text" name="celsius"></input>
+			<strong id="result"></strong>
+		</div>
+		<div id="converters">
+			<a style="display:block" id="fahrenheit" href="#">Fahrenheit</a>
+			<a style="display:block" id="kelvin" href="#">Kelvin</a>
+			<a style="display:block" id="reaumur" href="#">Reaumur</a>
+			<a style="display:block" id="rankine" href="#">Rankine</a>
+		</div>
+	</form>
+
+	@section scripts {
+		<script type="text/javascript">
+			require(['app/utils/unitsOfMeasure'], function (uom) {
+				"use strict";
+
+				$('#converters').find('> a').bind('click', function (e) {
+					var id = $(this)[0].id,
+						method = "to" + (id.charAt(0).toUpperCase() + id.slice(1)),
+						celsius = new uom.temperature.Celsius(Number($('#celsius').val()));
+
+					$('#result').text(celsius[method]());
+				})
+			})
+		</script>
+	}
 </div>

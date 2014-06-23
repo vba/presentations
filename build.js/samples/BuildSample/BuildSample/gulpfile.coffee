@@ -60,24 +60,24 @@ CommonTasks =
 				white: true
 				vars: true
 				globals : 
-					"define": true
-					"console": true 
-					"_": true 
+					"define": false
+					"console": false 
+					"_": false 
 			.pipe jslint.report()
 
 		gulp.src(filePaths.app.src)
 			.pipe gulp.dest filePaths.app.dest
 
-	runSpecs: () ->
+	runSpecs: (silentMode) ->
 		gulp.src(filePaths.test.spec)
 			.pipe plumber()
-			.pipe mocha()
+			.pipe mocha({silentMode: Boolean(silentMode)})
 
 ###
 		Tasks
 ###
 
-gulp.task 'default', ['watch-src-js'], ->
+gulp.task 'default', ['watch-src-js']
 
 gulp.task 'clean-dest', -> 
 	gulp.src([filePaths.app.dest, filePaths.test.dest])
