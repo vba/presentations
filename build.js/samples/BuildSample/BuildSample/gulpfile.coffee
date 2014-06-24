@@ -71,7 +71,7 @@ CommonTasks =
 	runSpecs: (silentMode) ->
 		gulp.src(filePaths.test.spec)
 			.pipe plumber()
-			.pipe mocha({silentMode: Boolean(silentMode)})
+			.pipe mocha({silentMode: Boolean(silentMode)}).on('error', gutil.log)
 
 ###
 		Tasks

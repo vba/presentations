@@ -4,6 +4,8 @@
   "description": "Registry additions have been made in order to provide you the best web development experience. See http://bloggemdano.blogspot.com/2013/11/adding-new-items-to-pure-f-aspnet.html for more information.",
   "main": "gulpfile.js",
   "dependencies": {
+  },
+  "devDependencies": {
     "coffee": "~0.0.1",
     "grunt": "~0.4.5",
     "gulp-clean": "~0.3.0",
@@ -19,9 +21,7 @@
     "coffee-script": "~1.7.1",
     "requirejs": "~2.1.14",
     "gulp-mocha-phantomjs": "~0.2.2",
-    "gulp-plumber": "~0.6.3"
-  },
-  "devDependencies": {
+    "gulp-plumber": "~0.6.3",
     "gulp-jslint-simple": "~0.2.0"
   },
   "scripts": {
