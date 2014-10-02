@@ -7,7 +7,7 @@ module ConsoleApp.Main
 
 open System
 
-
+let me() = "be"
 
 [<EntryPoint>]
 let main args = 
